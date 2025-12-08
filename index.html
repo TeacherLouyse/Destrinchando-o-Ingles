@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planos</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Header */
+    .cabecalho {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      height: auto;
+      width: 100%;
+      background: #2E5C9A;
+      padding: 20px;
+      gap: 20px;
+      text-align: center;
+    }
+
+    .imagem-cabecalho {
+      height: auto;
+      width: 150px;
+      max-width: 100%;
+      border: 2px solid white; 
+      border-radius: 8px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .imagem-cabecalho:hover {
+      transform: scale(1.1);
+    }
+
+    .contato {
+      flex: 1;
+      font-size: clamp(24px, 6vw, 80px);
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      color: white;
+      text-shadow: 3px 3px 8px rgba(0,0,0,0.7);
+    }
+
+    /* Texto de apresentação */
+    .apresentacao {
+      width: 90%;
+      max-width: 900px;            
+      margin: 30px auto;
+      font-size: clamp(15px, 2vw, 19px);
+      background-color: rgba(128, 128, 128, 0.15); 
+      text-align: justify;
+      padding: 20px 25px;
+      border-radius: 12px;   
+      line-height: 1.6;      
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .icone {
+      height: 25px;
+      width: 25px;
+      vertical-align: middle;
+      margin-left: 5px;
+    }
+
+    /* Links sem sublinhado */
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    a:hover {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Carrossel */
+    .carousel {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      gap: 20px;
+      flex-wrap: wrap;
+      max-width: 1100px;
+      margin: 20px auto 60px;
+      padding: 0 15px;
+    }
+
+    section {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 25px;
+      text-align: center;
+      flex: 1 1 300px;
+      min-width: 260px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    h2 {
+      color: #333;
+      margin-bottom: 10px;
+      font-size: clamp(20px, 3vw, 26px);
+    }
+
+    p { 
+      color: #555;
+      margin: 10px 0;
+      font-size: clamp(14px, 2vw, 18px);
+    }
+
+    .preco { 
+      font-size: clamp(20px, 3vw, 24px);
+      font-weight: bold;
+      margin: 15px 0;
+      color: #007BFF;
+    }
+
+    /* Botões */
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      background: #007BFF;
+      color: white;
+      font-size: clamp(14px, 2vw, 18px);
+      cursor: pointer;
+      transition: background 0.3s ease;
+      width: fit-content;
+      margin: 15px auto 0;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    button a {
+      text-decoration: none;
+      color: white;
+      display: inline-block;
+    }
+
+    button a:hover {
+      text-decoration: none;
+      color: red;
+    }
+
+    /* ----------- MEDIA QUERIES ----------- */
+
+    /* Tablets */
+    @media (max-width: 992px) {
+      .cabecalho {
+        justify-content: center;
+      }
+
+      .imagem-cabecalho {
+        width: 130px;
+      }
+
+      .contato {
+        font-size: clamp(30px, 7vw, 60px);
+      }
+
+      .apresentacao {
+        width: 95%;
+        padding: 15px;
+      }
+
+      .carousel {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      section {
+        width: 90%;
+        max-width: 400px;
+      }
+    }
+
+    /* Celulares */
+    @media (max-width: 600px) {
+      .cabecalho {
+        flex-direction: column;
+        height: auto;
+        text-align: center;
+      }
+
+      .imagem-cabecalho {
+        width: 120px;
+        margin: 0 auto;
+      }
+
+      .contato {
+        font-size: 32px;
+      }
+
+      .apresentacao {
+        font-size: 16px;
+        width: 95%;
+        padding: 15px;
+      }
+
+      .carousel {
+        gap: 15px;
+      }
+
+      section {
+        width: 100%;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      button {
+        width: 100%;
+        max-width: 250px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="cabecalho">
+    <img src="https://i.imgur.com/NB6k87h.jpeg" alt="Foto Louyse" class="imagem-cabecalho">
+    <div class="contato">Destrinchando o Inglês</div>
+  </header>
+
+  <div class="apresentacao">
+    <p>
+      Hello, guys! Muito prazer! Me chamo <strong>Louyse Mota</strong>, sou de Pernambuco e formada em Relações Internacionais. Sempre fui fascinada pela língua inglesa e trabalho como professora há três anos. Há um ano, decidi me aventurar criando meu curso, com material desenvolvido por mim, do zero e <strong>100% online</strong>, com o intuito de continuar ajudando mais pessoas a aprenderem inglês ao redor do mundo. É maravilhoso ver o progresso dos alunos e a realização de cada um deles, seja em seus destaques pessoais ou profissionais.
+    </p>
+    <p>
+      Com aulas leves e dinâmicas, o <strong>Destrinchando o Inglês</strong> tem como foco a compreensão de como o idioma funciona detalhadamente, para que possamos solucionar todas as suas limitações como aluno(a). Acredite, <strong>QUALQUER</strong> pessoa pode aprender inglês.
+    </p>
+    <p>
+      Quer se aventurar comigo? Entre em contato e tire suas dúvidas.<br>
+      É só clicar aqui 
+      <a href="https://wa.me/qr/NHRHYFOCVWNSG1" target="_blank">
+        <img src="https://i.imgur.com/quq7Z8e.png" alt="WhatsApp" class="icone">
+      </a> 
+      ou (81) 99590-7540<br>
+      Ou aqui 
+      <a href="https://www.instagram.com/teacherlouyse?igsh=MTFiamsxa2hyam1pcg==" target="_blank">
+        <img src="https://i.imgur.com/CUAsGiT.png" alt="Instagram" class="icone">
+      </a>
+    </p>
+  </div>
+
+  <div class="carousel">
+    <section>
+      <h2>PLANO 1</h2>
+      <p>4 aulas de 30 minutos por semana</p>
+      <p>ou</p>
+      <p>2 aulas de 60 minutos por semana</p>
+      <p class="preco">R$ 260,00/mês</p>
+      <button><a href="https://wa.me/qr/NHRHYFOCVWNSG1" target="_blank">WhatsApp</a></button>
+    </section>
+
+    <section>
+      <h2>PLANO 2</h2>
+      <p>4 aulas de 45 minutos por semana</p>
+      <p>ou</p>
+      <p>3 aulas de 60 minutos por semana</p>
+      <p class="preco">R$ 310,00/mês</p>
+      <button><a href="https://wa.me/qr/NHRHYFOCVWNSG1" target="_blank">WhatsApp</a></button>
+    </section>
+
+    <section>
+      <h2>PLANO 3</h2>
+      <p>4 aulas de 60 minutos por semana</p>
+      <p class="preco">R$ 370,00/mês</p>
+      <button><a href="https://wa.me/qr/NHRHYFOCVWNSG1" target="_blank">WhatsApp</a></button>
+    </section>
+  </div>
+</body>
+</html>
